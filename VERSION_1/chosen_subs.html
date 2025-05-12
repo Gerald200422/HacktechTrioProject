@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chosen Subject Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Squada+One&display=swap" rel="stylesheet">
+</head>
+<style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 24px;
+  }
+
+  .dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .math-title {
+    font-size: 66px;
+    color: #3a3939;
+    font-family: 'Squada One', cursive;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 12px 16px;
+  }
+
+  .back-text {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .materials-section {
+    flex: 1;
+  }
+
+  .materials-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    font-size: 42px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .sort-button {
+    display: flex;
+    align-items: center;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    padding: 8px 16px;
+  }
+
+  .sort-text {
+    font-size: 35px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .lesson-modules {
+    background-color: #f9fafa;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .module-item {
+    margin-bottom: 24px;
+  }
+
+  .module-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .module-title {
+    font-size: 28.9px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .module-title.purple {
+    color: #5a3b86;
+  }
+
+  .module-author {
+    font-size: 14.6px;
+    font-family: 'Poppins', sans-serif;
+  }
+  .module-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .module-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .module-title,
+  .module-author {
+    margin-right: auto;
+  }
+
+  .chooseBtn {
+    background-color: #98cdff;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .chooseBtn:hover {
+    background-color: #7bb8e6;
+  }
+
+  @media (max-width: 640px) { 
+    .chooseBtn {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 991px) { 
+    .chooseBtn {
+      font-size: 15px;
+      padding: 7px 14px;
+    }
+  }
+
+  @media (min-width: 992px) { 
+    .chooseBtn {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+  .games-section {
+    margin-top: 32px;
+  }
+
+  .games-section .section-title {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  .games-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .game-card {
+    width: 248px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.27);
+    padding: 24px;
+  }
+
+  .game-title {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-description {
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .start-button-wrapper {
+    margin-top: 16px;
+  }
+
+  .start-button {
+    width: 100%;
+    background-color: #98cdff;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+
+  .scoreboard-section {
+    flex: 1;
+  }
+
+  .scoreboard-section .section-title {
+    font-size: 37px;
+    margin-bottom: 24px;
+  }
+
+  .scores-container {
+    background-color: #f9fafa;
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .score-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .score-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .player-name {
+    font-size: 28.9px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .player-score {
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .player-score.orange {
+    color: #cf8731;
+  }
+
+  .player-score.green {
+    color: #29b642;
+  }
+
+  .player-score.blue {
+    color: #005695;
+  }
+
+  .player-score.purple {
+    color: #7648b8;
+  }
+
+  .player-score.red {
+    color: #e96c6c;
+  }
+
+   
+  .completed-games {
+    margin-top: 32px;
+  }
+
+  .completed-games .section-title {
+    font-size: 35px;
+    margin-bottom: 24px;
+  }
+
+  .completed-games-container {
+    display: flex;
+    gap: 24px;
+  }
+  @media (max-width: 991px) {
+    .dashboard-container {
+      padding: 16px;
+    }
+
+    .dashboard-content {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .dashboard-container {
+      padding: 12px;
+    }
+
+    .math-title {
+      font-size: 48px;
+    }
+
+    .section-title {
+      font-size: 32px;
+    }
+
+    .sort-text {
+      font-size: 24px;
+    }
+
+    .completed-games-container {
+      flex-direction: column;
+    }
+
+    .games-container {
+      justify-content: center;
+    }
+  }
+
+</style>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-wrapper">
+       <h1 class="math-title">CHOSEN SUBJECT</h1>
+      <header class="dashboard-header">
+        <div class="back-button">
+          <span class="back-text" onclick="window.history.back()">BACK</span>
+          <div class="arrow-icon">
+            <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.583 27.75L30.833 18.5L21.583 9.25L19.4247 11.4854L24.8976 16.9583H6.16634V20.0417H24.8976L19.4247 25.5146L21.583 27.75Z" fill="black"></path>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <section class="materials-section">
+          <div class="materials-header">
+            <h2 class="section-title">Materials</h2>
+            <div class="sort-button">
+              <span class="sort-text">Sort</span>
+              <div class="sort-icon">
+                <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M29 37.2167L14.5 22.7167L17.8833 19.3333L29 30.45L40.1167 19.3333L43.5 22.7167L29 37.2167Z" fill="#1F1F1F"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-modules">
+            <article class="module-item">
+              <h3 class="module-title">Lesson Module 1</h3>
+              <p class="module-author">Uploaded by: Maricel Bee</p>
+              <button class="chooseBtn" onclick="window.location.href='chosen_module_page.html'">Choose</button>
+            </article>
+            <article class="module-item">
+              <h3 class="module-title purple">Lesson Module 2</h3>
+              <p class="module-author">Uploaded by: Maricel Bee</p>
+              <button class="chooseBtn" onclick="window.location.href='chosen_module_page.html'">Choose</button>
+            </article>
+          </div>
+
+          <section class="games-section">
+            <h2 class="section-title">Games</h2>
+            <div class="games-container">
+              <article class="game-card">
+                <h3 class="game-title">Algebra Maze</h3>
+                <p class="game-description">Solve the equations to exit from the maze</p>
+                <div class="start-button-wrapper">
+                  <button class="start-button" onclick="startClicked()">Start</button>
+                </div>
+              </article>
+
+              <article class="game-card">
+                <h3 class="game-title">Solve Me</h3>
+                <p class="game-description">Answer questions to solve the problems</p>
+                <div class="start-button-wrapper">
+                  <button class="start-button"  onclick="startClicked()">Start</button>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="scoreboard-section">
+          <h2 class="section-title">Scoreboard</h2>
+          <div class="scores-container">
+            <div class="score-list">
+              <div class="score-item">
+                <span class="player-name">George</span>
+                <span class="player-score orange">13040 points</span>
+              </div>
+              <div class="score-item">
+                <span class="player-name">George</span>
+                <span class="player-score green">1340 points</span>
+              </div>
+              <div class="score-item">
+                <span class="player-name">George</span>
+                <span class="player-score blue">940 points</span>
+              </div>
+              <div class="score-item">
+                <span class="player-name">George</span>
+                <span class="player-score purple">540 points</span>
+              </div>
+              <div class="score-item">
+                <span class="player-name">George</span>
+                <span class="player-score red">40 points</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="completed-games">
+            <h2 class="section-title">Completed Games</h2>
+            <div class="completed-games-container">
+              <article class="game-card">
+                <h3 class="game-title">Math Quiz</h3>
+                <p class="game-description">Answer questions with a timer</p>
+              </article>
+
+              <article class="game-card">
+                <h3 class="game-title">Solve Me</h3>
+                <p class="game-description">Answer questions to solve the problems</p>
+              </article>
+            </div>
+          </section>
+        </section>
+        <script>
+          function startClicked() {
+            window.location.href = 'games_page.html';
+          }
+        </script>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
