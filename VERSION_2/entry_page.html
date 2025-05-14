@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduQualiTech</title>
+    <link rel="stylesheet" href="entry_page.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@275;400;500;700&family=Squada+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="entry-page">
+      <header class="navbar">
+        <div class="logo"></div>
+          <div class="nav-container">
+              <a href="#hero" class="nav-item hero" onclick="smoothScrollBtn(event)">DASHBOARD</a>
+              <a href="#donate" class="nav-item donate" onclick="smoothScrollBtn(event)" >DONATE</a>
+              <a href="#events" class="nav-item events" onclick="smoothScrollBtn(event)">EVENTS</a>
+              <a href="#faq" class="nav-item faq"onclick="window.location.href='faq_clicked_page.html'">FAQ</a>
+            </nav>
+            <div class="profile-container">
+            <div class="profile-image" onclick="toggleAuthButtons()"></div>
+            <div class="auth-buttons" id="authButtons">
+              <button onclick="login()" class="auth-button login">Login</button>
+              <button onclick="signUp()" class="auth-button signup">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero-section" data-el="div-1" id="hero">
+        <div class="hero-content">
+          <div class="hero-column">
+        <div class="hero-text-container">
+          <h1 class="organization-name">EduQualiTech</h1>
+          <div class="mission-container">
+            <p class="mission-statement">
+          "Our mission is to ensure free and accessible educational
+          materials for everyone, anytime and anywhere."
+            </p>
+            <div class="get-started-container">
+            <button class="get-started-button" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;" onclick="window.location.href='login_form.html'">GET STARTED</button>
+            </div>
+            <div class="scroll-indicator" style="margin-top: 40px; text-align: center;">
+            <button class="scroll-button">Scroll Down ▼</button>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="hero-image-column">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f165efd29f2c42c49f4e908c9d80a1893af61bd0?placeholderIfAbsent=true&apiKey=5a9e8266866345018ded92500dbcac69" class="hero-image" alt="Education illustration" />
+          </div>
+        </div>
+      </section>
+        <section class="donation-section" id="donate">
+          <h1 class="donation-title">DONATE BOOKS FOR KIDS</h1>
+          <article class="donation-content">
+            <p class="donation-description">
+              Provide access to education for underprivileged children by donating
+              books. Your contribution will help bridge the knowledge gap and inspire a
+              love for learning.
+            </p>
+            <div class="donation-benefits">
+              How Your Donation Helps:
+              <br />
+              Access to Education: Books will be distributed to children who lack access
+              to educational resources.
+              <br />
+        
+              <br />
+              Fostering a Love for Reading: Your donation will help children develop
+              essential reading skills and a lifelong passion for learning.
+              <br />
+            </div>
+          </article>
+          <div class="donation-cta-container">
+            <div class="donation-cta-row">
+              <div class="donation-column left-column">
+                <img src="https://cdn.builder.io/api/v1/image/assets/5a9e8266866345018ded92500dbcac69/27465072fe946a677d9e7ac4e3b858f630af42e6?placeholderIfAbsent=true" alt="Children reading books" class="donation-image" />
+              </div>
+              <div class="donation-column center-column">
+                <button class="donate-button" onclick="buttonClicked()">DONATE</button>
+              </div>
+              <div class="donation-column right-column">
+                <img src="https://cdn.builder.io/api/v1/image/assets%2F5a9e8266866345018ded92500dbcac69%2Fa599df9d09254faa56fbc875322202c66e64faf6" alt="Book donation" class="donation-image-right" />
+              </div>
+            </div>
+          </div>
+        </section>
+     <section class="full-section" id="events">
+      <div class="content-wrapper">
+        <div class="title">
+          <h1 class="responsive-title">📅 EVENTS & OUTREACH</h1>
+        </div>
+        <div class="literacy-card">
+          <h2>📘 Read to Reach: Community Literacy Drive Program</h2>
+          <p>Join us in bringing education and donated books to underserved communities.</p>
+          <a href="#" class="learn-more-btn" onclick="window.location.href='events_clicked_page.html'">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <script>
+      function toggleAuthButtons() {
+        const authButtons = document.getElementById('authButtons');
+        if (authButtons) {
+          authButtons.classList.toggle('visible');
+        }
+      }
+
+      function login() {
+        window.location.href = 'login_form.html';
+      }
+
+      function signUp() {
+        window.location.href = 'signup_form.html';
+      }
+      function buttonClicked() {
+        window.location.href = "donate_page.html";
+      }
+      document.querySelector(".scroll-button").addEventListener("click", function () {
+        const targetSection = document.querySelector(".donation-section");
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      });
+    function smoothScrollBtn(event) {
+        event.preventDefault(); 
+        const targetId = event.currentTarget.getAttribute("href").substring(1); 
+        const targetSection = document.getElementById(targetId) || document.querySelector(`.${targetId}-section`);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+       
+    </script>
+  </body>
+</html>

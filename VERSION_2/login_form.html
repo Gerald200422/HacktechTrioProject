@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    body {
+        background-image: url('background22.jpg');
+        font-family: Arial, sans-serif;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        transition: background 1.5s ease-in-out; 
+    }
+
+    .login-container {
+        max-width: 290px;
+        width: 50%;
+        height: 65%;
+        padding: 30px;
+        background-color: rgba(207, 202, 208, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 20px 30px rgb(125, 125, 125);
+        text-align: center;
+        color: #fff;
+        opacity: 2;
+        transform: scale(1.05);
+        transition: opacity 0.8s ease, transform 0.8s ease; 
+    }
+
+    .login-container h2 {
+        margin-bottom: 10px;
+    }
+    .login-container img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: -8%;
+    }
+    .login-label{
+        color: #333333;
+        font-weight: 900;
+        font-size: larger;
+        margin-top: 10%;
+        margin-bottom: 2%;
+    }
+
+    .error-message {
+        display: none; 
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #f8d7da; 
+        color: #721c24; 
+        border: 1px solid #f5c6cb; 
+        border-radius: 5px;
+        position: relative; 
+    }
+
+    .error-message i {
+        position: absolute;
+        top: 10px;
+        left: 10px; 
+    }
+
+
+    .input-group {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="password"] { 
+        width: 100%;
+        padding: 12px 40px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        background-color: #f1f1f1;
+        color: #333333;
+        box-sizing: border-box;
+    }
+
+    .input-group:hover {
+        transform: scale(1.05); 
+    }
+
+    .input-group i {
+        position: absolute;
+        top: 50%;
+        right: 15px; 
+        transform: translateY(-50%);
+        color: black; 
+        cursor: pointer; 
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 20px;
+        background-color: rgb(71, 93, 219);
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #225476;
+        transform: scale(1.05); 
+    }
+
+    a {
+        color: darkblue;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .select-role {
+        position: relative;
+        cursor: pointer; 
+    }
+    .role-options {
+        position: absolute;
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        z-index: 10;
+        max-height: 150px; 
+        overflow-y: auto; 
+        width: 100%; 
+    }
+    .role-option {
+        padding: 10px;
+        cursor: pointer;
+    }
+    .role-option:hover {
+        background-color: darkgray; 
+    }
+
+    .triangle {
+        width: 2px;
+        height: 0;
+        margin-right: 2%;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 10px solid black; 
+        position: absolute;
+        top: 50%;
+        right: 10px; 
+        transform: translateY(-50%); 
+        cursor: pointer; 
+    }
+
+
+    @media (max-width: 768px) {
+        .login-container {
+            max-width: 90%;
+            padding: 15px;
+        }
+        button {
+            font-size: 14px;
+        }
+    }
+
+    body.loaded .login-container {
+        opacity: 1;
+        transform: scale(1);
+    }
+</style>
+    <script>
+        function startCountdown(seconds) {
+            var countdownElement = document.getElementById('countdown');
+            var loginForm = document.getElementById('loginForm');
+            var remainingSeconds = seconds;
+
+            loginForm.style.display = 'none';
+
+            var countdownInterval = setInterval(function() {
+                if (remainingSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownElement.innerHTML = "You can try logging in again.";
+                    loginForm.style.display = 'block';
+                } else {
+                    countdownElement.innerHTML = "Please wait " + remainingSeconds + " second" + (remainingSeconds !== 1 ? 's' : '') + " before trying again.";
+                }
+                remainingSeconds--;
+            }, 1000);
+        }
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye-slash');
+            });
+        });
+
+        function showError(message) {
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.innerHTML = "<i class='fas fa-exclamation-circle'></i> " + message;
+            errorMessage.style.display = "block"; 
+        }
+
+        function hideError() {
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.style.display = "none"; 
+        }
+
+         
+         document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('fa-eye-slash');
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <img src="Profile2.jpg" alt="Profile Icon">
+        <h2 class="login-label">LOGIN</h2>
+
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-circle"></i> 
+        </div>
+
+
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="fas fa-user"></i>
+            </div>
+
+            <div class="input-group">
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <i class="fas fa-eye" id="togglePassword" style="cursor: pointer;"></i>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+
+            
+            this.classList.toggle("fa-eye-slash");
+        });
+    </script>
+            <button type="submit" onclick="alert('Assuming you have been blocked for 30 minutes becz of 3 MAXIMUM ATTEMPT and try again...'); alert('You waited for 30 minutes and inputted your credentials again and it was successful. REDIRECTING...'); window.location.href='home_page.html';">Login</button>
+            <p style="color: #333;">Don't have an account? <a href="signup_form.html">Sign up</a></p>
+            <a href="forgot_password.html">Forgot Password?</a>
+            <p id="countdown"></p>
+        </form>
+    </div>
+</body>
+</html>
