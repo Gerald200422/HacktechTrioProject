@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Page</title>
+    <style>
+    .games-mode {
+        background-color: rgba(255, 255, 255, 1);
+        display: flex;
+        padding: 0 37px 94px;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        max-height: 100vh;
+    }
+
+    @media (max-width: 991px) {
+    .games-mode {
+        padding: 0 20px 94px;
+    }
+    }
+
+    
+    .header-container {
+        align-self: stretch;
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+    .header-container {
+        max-width: 100%;
+    }
+    }
+
+    
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    @media (max-width: 991px) {
+    .header-content {
+        max-width: 100%;
+    }
+    }
+
+    
+    .header-top {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+        gap: 40px 56px;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+    .header-top {
+        max-width: 100%;
+    }
+    }
+
+    
+    .back-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-radius: 15px;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+        align-self: flex-end;
+        display: flex;
+        margin-top: 27px;
+        padding: 7px 17px;
+        align-items: flex-start;
+        gap: 21px;
+        font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+        font-size: 25px;
+        color: rgba(0, 0, 0, 1);
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 991px) {
+    .back-button {
+        white-space: initial;
+    }
+    }
+
+    
+    .back-icon {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 37px;
+        flex-shrink: 0;
+    }
+
+    
+    .game-mode-title {
+        font-family:
+        "Squada One",
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+        font-size: 66px; 
+        color: rgba(58, 57, 57, 1);
+        font-weight: 900;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: -5px;
+    }
+
+    @media (max-width: 991px) {
+    .game-mode-title {
+        font-size: 48px;
+        max-width: 100%;
+        padding: 22px 20px;
+    }
+    }
+
+    
+    .subject-title {
+        color: rgba(93, 69, 69, 1);
+        font-size: 24px;
+        font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+        font-weight: 600;
+        align-self: center;
+        margin-top: 15px;
+        margin-left: 10px;
+        margin-bottom: 0;
+    }
+
+    
+    .points-container {
+        align-self: flex-end;
+        margin-top: 36px;
+        font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+    }
+
+    
+    .points-display {
+        border-radius: 5px;
+        background-color: rgba(244, 244, 244, 1);
+        padding: 5px 21px 12px;
+        font-size: 15px;
+        color: rgba(233, 163, 52, 1);
+        font-weight: 700;
+    }
+
+    @media (max-width: 991px) {
+    .points-display {
+        margin-right: 8px;
+        padding: 5px 20px 12px;
+    }
+    }
+
+
+    .redeem-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-radius: 25px;
+        background-color: rgba(75, 176, 213, 1);
+        margin-top: 12px;
+        padding: 3px 26px 18px;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 1);
+        font-weight: 600;
+        font-family: Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+        white-space: nowrap;
+        align-items: center;
+    }
+
+    @media (max-width: 991px) {
+    .redeem-button {
+        padding: 3px 20px 18px;
+        white-space: initial;
+    }
+    }
+
+    
+    .content-image-primary {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        margin-top: 33px;
+        max-width: 1006px;
+        height: 250px;
+    }
+
+    @media (max-width: 991px) {
+        .content-image-primary {
+            max-width: 100%;
+            height: 250px; 
+        }
+    }
+
+    .content-image-secondary {
+        aspect-ratio: 3.91;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        max-width: 1007px;
+        height: 220px; 
+    }
+
+    @media (max-width: 991px) {
+        .content-image-secondary {
+            max-width: 100%;
+            height: 200px;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <header class="games-mode">
+        <h1 class="game-mode-title">GAME MODE ON</h1>
+        <div class="header-container">
+            <div class="header-content">
+                <div class="header-top">
+                    <button class="back-button">
+                        <img
+                            src="https://cdn.builder.io/api/v1/image/assets/5a9e8266866345018ded92500dbcac69/e6f3351a724225c413b61d3f0818f8778ce53451?placeholderIfAbsent=true"
+                            class="back-icon"
+                            alt="Back"
+                        />
+                        <span onclick="window.history.back()">BACK</span>
+                    </button>
+                </div>
+                <h2 class="subject-title">CHOSEN SUBJECT</h2>
+            </div>
+            <div class="points-container">
+                <div class="points-display">120 Points</div>
+                <button class="redeem-button" onclick="window.location.href='redeem_page.html'">REDEEM</button>
+            </div>
+        </div>
+        <img
+            src="https://cdn.builder.io/api/v1/image/assets/5a9e8266866345018ded92500dbcac69/e4282eae7c27a540f5b2e20ba2545274a69ac450?placeholderIfAbsent=true"
+            class="content-image-primary"
+            alt="Game content"
+        />
+        <img
+            src="https://cdn.builder.io/api/v1/image/assets/5a9e8266866345018ded92500dbcac69/473bcfb38129d1ababc2077647a9b3bd327cd67c?placeholderIfAbsent=true"
+            class="content-image-secondary"
+            alt="Game content"
+        />
+    </header>
+</body>
+</html>
