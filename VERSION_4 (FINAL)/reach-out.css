@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.reach-out-section {
+  background-color: #e2e2e2;
+  padding: 30px 0;
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.ros-title {
+  font-family: "Squada One", sans-serif;
+  font-size: 66px;
+  color: #3a3939;
+  margin-bottom: 40px;
+}
+
+.teachers-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.teacher-card {
+  position: absolute;
+  width: 220px;
+  height: 320px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 12px; 
+  overflow: visible; 
+  opacity: 0;
+  transform: scale(0.8) translateX(0);
+}
+
+.teacher-card.center {
+  transform: scale(1.1) translateX(0);
+  opacity: 1;
+  z-index: 3;
+}
+
+.teacher-card.left {
+  transform: scale(0.9) translateX(-250px);
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.teacher-card.right {
+  transform: scale(0.9) translateX(250px);
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.teacher-card.left .teacher-image {
+  width: 220px;  
+  height: auto;  
+  margin-top: -40px; 
+  max-height: none;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.teacher-card.center .teacher-image {
+  width: 220px;
+  height: auto; 
+  max-height: none;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: -40px;
+}
+.teacher-card.right .teacher-image {
+  width: 220px;
+  height: auto; 
+  max-height: none;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: -40px;
+}
+
+.name-subject {
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+}
+
+.view-more-btn {
+  background-color: #fff;
+  color: #4bb0d5;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.view-more-btn:hover {
+  background-color: #4bb0d5;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .ros-title {
+    font-size: 48px;
+  }
+
+  .teacher-card.left,
+  .teacher-card.right {
+    display: none;
+  }
+
+  .teacher-card.center {
+    transform: scale(1.05);
+  }
+  
+}

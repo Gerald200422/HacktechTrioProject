@@ -1,0 +1,166 @@
+
+
+.games-container {
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100vh;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.games-title {
+  font-family: "Squada One", sans-serif;
+  font-size: 64px;
+  color: #3a3939;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #3c3535;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.games-carousel {
+  display: flex !important;          
+  flex-direction: row !important;    
+  flex-wrap: nowrap !important;    
+  overflow-x: auto;                
+  justify-content: center;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.game-card {
+  flex: 0 0 auto;                  
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.game-card.center {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.game-card.side {
+  transform: scale(0.9);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.game-card.left,
+.game-card.right {
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.game-image {
+  width: 250px;
+  height: 280px;
+  margin-bottom: 20px;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.start-button {
+  width: 120px;
+  height: 50px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4bb0d5;
+  border: none;
+  cursor: pointer;
+  margin: 20px auto; 
+}
+
+.button-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+@media (max-width: 991px) {
+  .games-container {
+    max-width: 991px;
+  }
+
+ .games-carousel {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+  }
+  .arrow-container {
+    display: none;
+  }
+
+  .game-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .games-container {
+    max-width: 640px;
+  }
+
+  .games-title {
+    font-size: 48px;
+    margin: 20px;
+  }
+
+  .game-image {
+    width: 300px;
+    height: 285px;
+  }
+
+  .start-button {
+    width: 140px;
+    height: 60px;
+  }
+
+  .button-text {
+    font-size: 18px;
+  }
+ .games-carousel {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .game-card.left,
+  .game-card.right {
+    display: none;
+  }
+  .game-card {
+    flex: 0 0 auto;
+    max-width: 250px;
+    scroll-snap-align: center;
+  }
+
+  .game-card.center {
+    transform: scale(1);
+  }
+
+  .game-card:first-of-type .game-image,
+  .game-card:first-of-type .start-button,
+  .game-card:last-of-type .game-image,
+  .game-card:last-of-type .start-button {
+    display: none;
+  }
+}
+  
