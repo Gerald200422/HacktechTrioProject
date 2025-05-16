@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chosen Modules Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Squada+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+    }
+    .page-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 200vw;
+      max-height: 200vh;
+      background-color: #fdfdfd;
+      padding: 20px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .page-header {
+      margin-bottom: 20px;
+    }
+
+    .main-title {
+      font-family: 'Squada One', cursive;
+      font-size: 66px;
+      color: #3a3939;
+      width: 500px;
+      height: 60px;
+      background-color: #E8E6E6;
+      border-radius: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .modules-container {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .navigation-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .back-button {
+      width: 130px;
+      height: 30px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      gap: 10px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .back-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    
+    .sort-container {
+      margin-bottom: 30px;
+    }
+
+    .sort-button {
+      width: 130px;
+      height: 30px;
+      background-color: #4690b3;
+      border-radius: 30px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+    }
+
+    .sort-text {
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+
+    .modules-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+  
+    .module-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .module-title {
+      color: #267eea;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      width: 300px;
+      height: 60px;
+      background-color: #E8E6E6;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .module-actions {
+      display: flex;
+      gap: 20px;
+    }
+
+   
+    .action-button {
+      height: 50px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      padding: 0 15px;
+    }
+
+    .overview-button {
+      margin-left: 10px;
+      width: 180px;
+      background-color: #4bd570;
+    }
+
+    .pdf-button {
+      margin-left: 10px;
+      width: 164px;
+      background-color: #e58383;
+    }
+
+    .word-button {
+      margin-left: 10px;
+      width: 165px;
+      background-color: #4bb0d5;
+    }
+
+    .action-text {
+      margin-left: 15px;
+      color: #000;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .action-text-eye {
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .action-button img {
+      width: 100px;
+      height: 50px;
+    }
+
+    .pdf-button img, .word-button img {
+      width: 90px;
+      height: 90px;
+    }
+
+  
+    @media (max-width: 991px) {
+    .main-title {
+      font-size: 48px;
+      width: 500px;
+    }
+
+    .modules-list {
+      gap: 30px;
+    }
+
+    .module-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    }
+
+    @media (max-width: 640px) {
+    .main-title {
+      font-size: 48px;
+      width: 300px;
+    }
+    .module-actions {
+      flex-wrap: wrap;
+      height: 60px;
+      width: 20px;
+      flex-direction: column;
+    }
+    .overview-button .pdf-button .word-button {
+      width: 60px;
+      height: 20px;
+    }
+    .action-text {
+      margin-left: 25px;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .action-text-eye {
+      margin-left: 30px;
+      font-weight: 900;
+      font-size: 15px;
+    }
+    .action-button {
+      height: 40px;
+      width: 140px;
+      padding: 0 8px;
+    }
+    .action-button-eye {
+      height: 40px;
+      width: 140px;
+      padding: 0 8px;
+      margin-left: -15px;
+    }
+
+    .action-button img {
+      width: 50px;
+      height: 40px;
+    }
+
+    .modules-container {
+      margin-top: 10px;
+      margin-right: 15px;
+    }
+  }
+</style>
+<body>
+  <main class="page-container">
+    <div class="content-wrapper">
+      <header class="page-header">
+        <h1 class="main-title">CHOSEN MODULE</h1>
+      </header>
+      <section class="modules-container">
+        <nav class="navigation-bar">
+          <button class="back-button">
+            <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.417 27.75L6.16699 18.5L15.417 9.25L17.5753 11.4854L12.1024 16.9583H30.8337V20.0417H12.1024L17.5753 25.5146L15.417 27.75Z" fill="black"></path>
+            </svg>
+            <span class="back-text" onclick="window.history.back()">BACK</span>
+          </button>
+        </nav>
+        <div class="sort-container">
+          <button class="sort-button">
+            <span class="sort-text">SORT</span>
+            <svg width="60" height="52" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 32.5L17.5 21.6667H42.5L30 32.5Z" fill="white"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="modules-list">
+          <article class="module-item">
+            <h2 class="module-title">LEARNING MODULE NO.1</h2>
+            <div class="module-actions">
+              <button class="action-button overview-button">
+                <span class="action-text-eye" onclick="window.location.href='module_overview_page.html'">OVERVIEW</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc032ab1422d588820a71a3723283c97041ff67b" class="action-button-eye" style="margin-right: 5px;" alt="Eye icon">
+              </button>
+              <button class="action-button pdf-button">
+                <a style="text-decoration: none;" href="pdfExample.pdf" download>
+                  <span class="action-text">PDF</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="PDF icon">
+              </button>
+              <button class="action-button word-button">
+                <a style="text-decoration: none; margin-left: 10px;" href="wordExample.docx" download>
+                  <span class="action-text">WORD</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="Word icon">
+              </button>
+            </div>
+          </article>
+
+          <article class="module-item">
+            <h2 class="module-title">LEARNING MODULE NO.2</h2>
+            <div class="module-actions">
+              <button class="action-button overview-button">
+               <span class="action-text-eye" onclick="window.location.href='module_overview_page.html'">OVERVIEW</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc032ab1422d588820a71a3723283c97041ff67b" class="action-button-eye" style="margin-right: 5px;" alt="Eye icon">
+              </button>
+              <button class="action-button pdf-button">
+                  <a style="text-decoration: none;" href="pdfExample.pdf" download>
+                  <span class="action-text">PDF</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="PDF icon">
+              </button>
+              <button class="action-button word-button">
+                <a style="text-decoration: none; margin-left: 10px;" href="wordExample.docx" download>
+                  <span class="action-text">WORD</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="Word icon">
+              </button>
+            </div>
+          </article>
+
+          <article class="module-item">
+            <h2 class="module-title">LEARNING MODULE NO.3</h2>
+            <div class="module-actions">
+              <button class="action-button overview-button">
+                <span class="action-text-eye" onclick="window.location.href='module_overview_page.html'">OVERVIEW</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc032ab1422d588820a71a3723283c97041ff67b" class="action-button-eye" style="margin-right: 5px;" alt="Eye icon">
+              </button>
+              <button class="action-button pdf-button">
+                 <a style="text-decoration: none;" href="pdfExample.pdf" download>
+                  <span class="action-text">PDF</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="PDF icon">
+              </button>
+              <button class="action-button word-button">
+                <a style="text-decoration: none; margin-left: 10px;" href="wordExample.docx" download>
+                  <span class="action-text">WORD</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="Word icon">
+              </button>
+            </div>
+          </article>
+
+          <article class="module-item">
+            <h2 class="module-title">LEARNING MODULE NO.4</h2>
+            <div class="module-actions">
+              <button class="action-button overview-button">
+                <span class="action-text-eye" onclick="window.location.href='module_overview_page.html'">OVERVIEW</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc032ab1422d588820a71a3723283c97041ff67b" class="action-button-eye" style="margin-right: 5px;" alt="Eye icon">
+              </button>
+              <button class="action-button pdf-button">
+                 <a style="text-decoration: none;" href="pdfExample.pdf" download>
+                  <span class="action-text">PDF</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="PDF icon">
+              </button>
+              <button class="action-button word-button">
+                <a style="text-decoration: none; margin-left: 10px;" href="wordExample.docx" download>
+                  <span class="action-text">WORD</span>
+                </a>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8d8faf14db08b6b0acb4bdab70952c95b6e924" alt="Word icon">
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
